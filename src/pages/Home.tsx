@@ -1,6 +1,6 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Loader } from "../components";
+import {HomeInfo, Loader} from "../components";
 import { Island, Sky, Plane, Bird } from "../models";
 import { useHome } from "./Home.hooks.ts";
 
@@ -19,9 +19,9 @@ export const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
-      {/*<div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">*/}
-      {/*    POPUP*/}
-      {/*</div>*/}
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+          {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
 
       <Canvas
         className={`w-full h-screen bg-transparent ${
@@ -60,6 +60,3 @@ export const Home = () => {
     </section>
   );
 };
-
-
-// todo 01:18:30

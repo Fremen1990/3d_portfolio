@@ -11,9 +11,6 @@ export const Plane = ({ isRotating, ...props }) => {
   const { scene, animations } = useGLTF(planeScene);
   const { actions } = useAnimations(animations, ref);
 
-  console.log("actions", actions['Take 001'])
-
-  console.log("Animations", animations)
 
   // Use an effect to control the plane's animation based on 'isRotating'
   // Note: Animation names can be found on the Sketchfab website where the 3D model is hosted.
