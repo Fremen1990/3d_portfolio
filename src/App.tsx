@@ -1,13 +1,21 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Navbar } from "./components";
+import { About, Contact, Home, Projects } from "./pages";
+
 function App() {
-
-    return (
-        <div>
-
-            <h1 className="text-3xl font-bold underline caret-amber-100 text-red-500">
-                Hello World TailwindCSS + React + Vite
-            </h1>
-        </div>
-    )
+  return (
+    <main className="bg-slate-300/20">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </main>
+  );
 }
 
-export default App
+export default App;
