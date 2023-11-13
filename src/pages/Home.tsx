@@ -1,26 +1,21 @@
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
 import { Loader } from "../components";
-import Island from "../models/Island.tsx";
-import {Sky} from "../models/Sky.tsx";
+import { Island, Sky, Plane, Bird } from "../models";
+import { useHome } from "./Home.hooks.ts";
 
 export const Home = () => {
-  const adjustIslandForScreenSize = () => {
-    let screenScale = null;
-    let screenPosition = [0, -6.5, -43];
-    let screenRotation = [0.1, 4.7, 0];
+  const { adjustIslandForScreenSize, adjustPlaneForScreenSize } = useHome();
 
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
-    } else {
-      screenScale = [1, 1, 1];
-    }
+  const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1);
 
-    return [screenScale, screenPosition, screenRotation];
-  };
+  console.log("currentStage", currentStage);
 
   const [islandScale, islandPosition, screenRotation] =
     adjustIslandForScreenSize();
+
+  const [planeScale, planePosition] = adjustPlaneForScreenSize();
 
   return (
     <section className="w-full h-screen relative">
@@ -29,25 +24,42 @@ export const Home = () => {
       {/*</div>*/}
 
       <Canvas
-        className="w-full h-screen bg-transparent"
+        className={`w-full h-screen bg-transparent ${
+          isRotating ? "cursor-grabbing" : "cursor-grab"
+        }`}
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <directionalLight  position={[1,1,1]} intensity={2}/>
-          <ambientLight intensity={0.5}/>
+          <directionalLight position={[1, 1, 1]} intensity={2} />
+          <ambientLight intensity={0.5} />
           {/*<pointLight />*/}
           {/*<spotLight />*/}
-          <hemisphereLight  skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
-
-          <Sky/>
-
+          <hemisphereLight
+            skyColor="#b1e1ff"
+            groundColor="#000000"
+            intensity={1}
+          />
+          <Bird />
+          <Sky isRotating={isRotating} />
           <Island
             position={islandPosition}
             scale={islandScale}
             screenRotation={screenRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+          />
+          <Plane
+            isRotating={isRotating}
+            scale={planeScale}
+            position={planePosition}
+            rotation={[0, 20, 0]}
           />
         </Suspense>
       </Canvas>
     </section>
   );
 };
+
+
+// todo 01:18:30
