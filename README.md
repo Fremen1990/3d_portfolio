@@ -3,7 +3,9 @@
 ## React + TypeScript + Vite + SWC + ThreeJS React Fiber 
 
 ### TODO: 
-
+- [ ] Add Avatar rounded image in welcome message on the left side "Hi, I am Tomasz...."
+- [ ] Add icon with TS 2d portfolio on the left side just aside TS
+- [ ] Animate HomeInfo component
 - [ ] Share the project results with the world on LinkedIn with tagging JS Mastery
 
 - [ ] Add a way to change the camera position to the different sections of the page
