@@ -5,7 +5,7 @@ export const Navbar = () => {
     <header className="header">
       <NavLink
         to="/"
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
+        className="hover-animate  w-14 h-14 text-lg rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
       >
         <p className="blue-gradient_text">TS</p>
       </NavLink>
@@ -13,7 +13,7 @@ export const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "text-blue-500 p-2 rounded-lg" : "text-black bg-white p-2 rounded-lg hover-animate "
           }
         >
           About
@@ -21,7 +21,7 @@ export const Navbar = () => {
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+              isActive ? "text-blue-500 p-2 rounded-lg" : "text-black bg-white p-2 rounded-lg hover-animate "
           }
         >
           Projects

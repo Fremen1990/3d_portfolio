@@ -19,6 +19,10 @@ type IslandProps = {
   setIsRotating: (isRotating: boolean) => void;
   setCurrentStage: (stage: any) => void;
   currentFocusPoint?: any; // Define the type of `currentFocusPoint` based on your usage
+  islandRef: any;
+  rotationSpeed: any;
+  handleMouseDown: any;
+  handleMouseUp: any;
   [key: string]: any; // for other props not defined above
 };
 
@@ -27,16 +31,20 @@ export const Island = ({
   setIsRotating,
   setCurrentStage,
   currentFocusPoint,
+  islandRef,
+  rotationSpeed,
+  handleMouseDown,
+  handleMouseUp,
   ...props
 }: IslandProps) => {
-  const islandRef = useRef();
+  // const islandRef = useRef();
 
   const { gl, viewport } = useThree();
 
   const { nodes, materials } = useGLTF(islandScreen);
 
   const lastX = useRef(0);
-  const rotationSpeed = useRef(0);
+  // const rotationSpeed = useRef(0);
   const dampingFactor = 0.95;
 
   const handlePointerDown = (event: PointerEvent | TouchEvent) => {
@@ -78,10 +86,12 @@ export const Island = ({
       if (!isRotating) setIsRotating(true);
       // @ts-ignore
       islandRef.current.rotation.y += 0.01 * Math.PI;
+      rotationSpeed.current = 0.0125;
     } else if (event.key === "ArrowRight") {
       if (!isRotating) setIsRotating(true);
       // @ts-ignore
       islandRef.current.rotation.y -= 0.01 * Math.PI;
+      rotationSpeed.current = -0.0125;
     }
   };
 
@@ -98,6 +108,8 @@ export const Island = ({
     canvas.addEventListener("pointermove", handlePointerMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
@@ -105,6 +117,8 @@ export const Island = ({
       canvas.removeEventListener("pointermove", handlePointerMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
+      document.addEventListener("mousedown", handleMouseDown);
+      document.addEventListener("mouseup", handleMouseUp);
     };
   }, [
     gl,
@@ -113,6 +127,8 @@ export const Island = ({
     handlePointerMove,
     handleKeyDown,
     handleKeyUp,
+    handleMouseDown,
+    handleMouseUp,
   ]);
 
   // This function is called on each frame update

@@ -1,11 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/browser': ^3.11.0
   '@react-spring/three': ^9.7.3
   '@react-three/drei': ^9.88.13
   '@react-three/fiber': ^8.15.10
   '@types/react': ^18.2.15
   '@types/react-dom': ^18.2.7
+  '@types/react-vertical-timeline-component': ^3.3.6
   '@typescript-eslint/eslint-plugin': ^6.0.0
   '@typescript-eslint/parser': ^6.0.0
   '@vitejs/plugin-react-swc': ^3.3.2
@@ -17,23 +19,27 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-router-dom: ^6.18.0
+  react-vertical-timeline-component: ^3.6.0
   tailwindcss: ^3.3.5
   three: ^0.158.0
   typescript: ^5.0.2
   vite: ^4.4.5
 
 dependencies:
+  '@emailjs/browser': 3.11.0
   '@react-spring/three': 9.7.3_vtzccqbr43e7q55mysho4pqu64
   '@react-three/drei': 9.88.13_4xfrsouwkhuqdyvvsihx5zqzvq
   '@react-three/fiber': 8.15.10_gfkbevidch66zar2wsaxatxrye
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.18.0_biqbaboplfbrettd7655fr4n2y
+  react-vertical-timeline-component: 3.6.0_react@18.2.0
   three: 0.158.0
 
 devDependencies:
   '@types/react': 18.2.37
   '@types/react-dom': 18.2.15
+  '@types/react-vertical-timeline-component': 3.3.6
   '@typescript-eslint/eslint-plugin': 6.10.0_u434aypout3c3z2ybwpl5ggmim
   '@typescript-eslint/parser': 6.10.0_5iy6f2d3forlnf27wdbuobyvmm
   '@vitejs/plugin-react-swc': 3.4.1_vite@4.5.0
@@ -63,6 +69,11 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
+    dev: false
+
+  /@emailjs/browser/3.11.0:
+    resolution: {integrity: sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@esbuild/android-arm/0.18.20:
@@ -726,6 +737,12 @@ packages:
       '@types/react': 18.2.37
     dev: false
 
+  /@types/react-vertical-timeline-component/3.3.6:
+    resolution: {integrity: sha512-OUvyPXRjXvUD/SNLO0CW0GbIxVF32Ios5qHecMSfw6kxnK1cPULD9NV80EuqZ3WmS/s6BgbcwmN8k4ISb3akhQ==}
+    dependencies:
+      '@types/react': 18.2.37
+    dev: true
+
   /@types/react/18.2.37:
     resolution: {integrity: sha512-RGAYMi2bhRgEXT3f4B92WTohopH6bIXw05FuGlmJEnv/omEn190+QYEIYxIAuIBdKgboYYdVved2p1AxZVQnaw==}
     dependencies:
@@ -1074,6 +1091,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1934,6 +1955,14 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-intersection-observer/8.34.0_react@18.2.0:
+    resolution: {integrity: sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -1985,6 +2014,17 @@ packages:
       debounce: 1.2.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-vertical-timeline-component/3.6.0_react@18.2.0:
+    resolution: {integrity: sha512-l9zulqjIGlRuaQeplGzV4r/tG2RYBpYt84Il8w4IxnJze2cDIGI04MKo3F7f1sHT0Sih1ohEFts8UV23AJS15Q==}
+    requiresBuild: true
+    dependencies:
+      classnames: 2.3.2
+      prop-types: 15.8.1
+      react-intersection-observer: 8.34.0_react@18.2.0
+    transitivePeerDependencies:
+      - react
     dev: false
 
   /react/18.2.0:
