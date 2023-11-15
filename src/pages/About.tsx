@@ -38,7 +38,7 @@ export const About = () => {
         <div className="mt-16 flex flex-wrap gap-12 justify-center">
           {skills.map((skill) => (
             <div className="block-container w-24 h-24" key={skill.name}>
-              <div className="btn-back rounded-xl" />
+              <div className="btn-back  rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
                   src={skill.imageUrl}

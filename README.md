@@ -1,8 +1,13 @@
-# 3D Portfolio DevThoms 
+# 3D Portfolio DevThomas
 
 ## React + TypeScript + Vite + SWC + ThreeJS React Fiber 
 
 ### TODO: 
+
+- [ ] Share the project results with the world on LinkedIn with tagging JS Mastery
+
+- [ ] Add a way to change the camera position to the different sections of the page
+- [ ] some small birds flying around
 - [ ] Add gif to readme with home page and fox
 - [ ] Add Buttons left and right to guide the user through the page
 - [ ] Add sections skills, experience, education, contact

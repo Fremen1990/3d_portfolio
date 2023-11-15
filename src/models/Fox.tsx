@@ -18,11 +18,6 @@ export const Fox = ({ currentAnimation, ...props }) => {
   const { nodes, materials, animations } = useGLTF(foxScene);
   const { actions } = useAnimations(animations, group);
 
-
-
-
-  console.log("FOX actions", actions);
-
   useEffect(() => {
     Object.values(actions).forEach((action) => action.stop());
 

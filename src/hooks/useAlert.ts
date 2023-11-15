@@ -8,7 +8,6 @@ export const useAlert = () => {
   });
 
   const showAlert = ({
-    show,
     text,
     type = "danger",
   }: {

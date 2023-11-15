@@ -12,7 +12,6 @@ export const Bird = (props) => {
   const { scene, animations } = useGLTF(birdScene);
   const { actions } = useAnimations(animations, birdRef);
 
-  console.log("BIRD actions", actions);
 
   useEffect(() => {
     actions["Take 001"].play();
