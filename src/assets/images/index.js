@@ -1,15 +1,17 @@
 import hero from './hero.jpg'
-import meta from './meta.png'
-import shopify from './shopify.png'
-import starbucks from './starbucks.png'
-import tesla from './tesla.png'
 import logo from './logo.svg'
+import orange from './orange.webp'
+import accenture from './accenture.webp'
+import tate from './tate.png'
+import megak from './megak.png'
+import mmc from './mmc.webp'
 
 export {
     hero,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
-    logo
+    logo,
+    orange,
+    accenture,
+    tate,
+    megak,
+    mmc
 }
