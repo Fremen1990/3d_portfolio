@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { arrow } from "../assets/icons";
-
+import tsAvatarAI from "../assets/ts-avatar-ai.png"
 // @ts-ignore
 const InfoBox = ({ text, link, btnText }) => (
   <div className="info-box">
@@ -15,10 +15,17 @@ const InfoBox = ({ text, link, btnText }) => (
 
 const renderContent = {
   1: (
-    <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
-      Hi, I am <span className="font-semibold">Tomasz</span>
-      <br />A Software Developer from Poland
+
+<div className="text-center py-4 px-8 mx-5">
+    <img
+        src={tsAvatarAI}  // Replace with the path to your avatar image
+        alt="Tomasz's Avatar"
+        className="mx-auto mb-3 w-20 sm:w-30 md:w-36 lg:w-44 rounded-full border-4 border-white" // Responsive size classes
+    />
+    <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">        Hi, I am <span className="font-semibold">Tomasz</span>
+        <br />Inspired and creative Software Developer
     </h1>
+</div>
   ),
   2: (
     <InfoBox
