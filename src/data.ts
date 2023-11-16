@@ -1,5 +1,5 @@
 // @ts-ignore
-import { orange, megak, mmc, accenture, tate } from "./assets/images";
+import { orange, megak, mmc, accenture, tate, thumbnail } from "./assets/images";
 import {
   car,
   contact,
