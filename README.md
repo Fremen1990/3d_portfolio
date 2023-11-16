@@ -21,3 +21,4 @@
 - [ ] Create and deploy(on Hostinger?) GraphQL server to fetch data from the centralized database on both portfolios
 
 
+![img.png](img.png)
