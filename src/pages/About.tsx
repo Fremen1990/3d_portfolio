@@ -20,8 +20,8 @@ export const About = () => {
 
       <div className="mt-5 flex flex-col gap-5 text-slate-500">
         <p>
-          Software Developer with more than 1 year of experience in the
-          industry. I have worked on a variety of projects, including web
+          Software Developer with coule years of experience in the
+          industry. I have worked on a variety projects, including web
           applications, mobile applications and full stack Front-End with
           Backend. I am a self-learned and self-motivated person who is always
           looking for new challenges. Passionated about learning new
