@@ -19,8 +19,13 @@ import { MdZoomIn, MdZoomOut } from "react-icons/md";
 
 export const Home = () => {
   const [islandPosition, setIslandPosition] = useState([0, -6, -20]);
-  const [api] = useSpring(() => ({ position: islandPosition }));
-  const islandSpring = useSpring({ position: islandPosition as any });
+  // const [api] = useSpring(() => ({ position: islandPosition }));
+  // const islandSpring = useSpring({ position: islandPosition as any });
+
+  const [{ position }, set] = useSpring(() => ({
+    position: islandPosition,
+  }));
+
   const islandRef = useRef();
   const rotationSpeed = useRef(0);
 
@@ -67,8 +72,8 @@ export const Home = () => {
         newY += adjustmentAmount;
       }
 
-      // @ts-ignore
-      api.start({ position: [prevPosition[0], newY, prevPosition[2]] });
+      set({ position: [prevPosition[0], newY, prevPosition[2]] });
+
       return [prevPosition[0], newY, prevPosition[2]];
     });
   };
@@ -241,7 +246,7 @@ export const Home = () => {
           <Bird />
           <Sky isRotating={isRotating} />
           {/*// @ts-ignore*/}
-          <a.group position={islandSpring.position}>
+          <a.group position={position}>
             <Island
               adjustIslandPosition={adjustIslandPosition}
               islandPosition={islandPosition}
