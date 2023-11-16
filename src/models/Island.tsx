@@ -26,7 +26,10 @@ type IslandProps = {
   [key: string]: any; // for other props not defined above
 };
 
+// Island Center: {x: -0.6741437911987305, y: 9.623085021972656, z: 2.3715381622314453}
 export const Island = ({
+  adjustIslandPosition,
+  islandPosition,
   isRotating,
   setIsRotating,
   setCurrentStage,
@@ -35,10 +38,10 @@ export const Island = ({
   rotationSpeed,
   handleMouseDown,
   handleMouseUp,
+  handleKeyDown,
+  handleKeyUp,
   ...props
 }: IslandProps) => {
-  // const islandRef = useRef();
-
   const { gl, viewport } = useThree();
 
   const { nodes, materials } = useGLTF(islandScreen);
@@ -78,26 +81,6 @@ export const Island = ({
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
-    }
-  };
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "ArrowLeft") {
-      if (!isRotating) setIsRotating(true);
-      // @ts-ignore
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-      rotationSpeed.current = 0.0125;
-    } else if (event.key === "ArrowRight") {
-      if (!isRotating) setIsRotating(true);
-      // @ts-ignore
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current = -0.0125;
-    }
-  };
-
-  const handleKeyUp = (event: KeyboardEvent) => {
-    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-      setIsRotating(false);
     }
   };
 

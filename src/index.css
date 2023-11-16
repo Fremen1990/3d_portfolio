@@ -51,7 +51,7 @@ body:has(.card[data-color="green"]:hover) {
     }
 
     .header {
-        @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+        @apply flex justify-between items-center px-4 py-4  sm:px-16  mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
     }
 
     .footer {
@@ -192,8 +192,11 @@ body:has(.card[data-color="green"]:hover) {
     .rotate-button {
         display: none;
     }
+    .hide-on-mobile{
+        display :none;
+    }
 }
 
 .hover-animate {
-    @apply transition duration-300 ease-in-out transform hover:scale-110  hover:shadow-lg;
+    @apply transition duration-200 ease-in-out transform hover:scale-110  hover:shadow-lg;
 }
